@@ -13,7 +13,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Install LaTeX with ModernCV
-        run: sudo apt-get install texlive-latex-extra
+        run: sudo apt-get install texlive-latex-extra texlive-fonts-extra
       - name: Render PDF
         run: pdflatex cv.tex
       - name: Get date
