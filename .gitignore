@@ -1,3 +1,6 @@
+*.pdf
+
+
 
 # Created by https://www.toptal.com/developers/gitignore/api/emacs,visualstudiocode,latex,linux,macos
 # Edit at https://www.toptal.com/developers/gitignore?templates=emacs,visualstudiocode,latex,linux,macos
@@ -16,6 +19,7 @@ tramp
 # Org-mode
 .org-id-locations
 *_archive
+ltximg/**
 
 # flymake-mode
 *_flymake.*
@@ -388,10 +392,8 @@ Temporary Items
 
 ### VisualStudioCode ###
 .vscode/*
-!.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
-!.vscode/extensions.json
 *.code-workspace
 
 ### VisualStudioCode Patch ###
