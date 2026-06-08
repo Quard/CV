@@ -12,7 +12,7 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v2
             - name: Install LaTeX with ModernCV
-              run: sudo apt-get install texlive-latex-extra texlive-fonts-extra fonts-font-awesome
+              run: sudo apt-get update && sudo apt-get install -y texlive-latex-extra texlive-fonts-extra fonts-font-awesome
             - name: Render PDF
               run: pdflatex cv.tex
             - name: Upload CV to Artifact
