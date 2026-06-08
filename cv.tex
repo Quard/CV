@@ -5,17 +5,19 @@
 %\usepackage[unicode]{hyperref}
 \usepackage{vmargin}
 
+\usepackage{fontawesome5}
+\renewcommand*{\githubsocialsymbol}{\faGithub\ }
+\renewcommand*{\linkedinsocialsymbol}{\faLinkedin\ }
+
 \setmarg{15mm}{10mm}{175mm}{257mm}
 \moderncvtheme[blue]{oldstyle}
 
-\firstname{Vadym}
-\lastname{Zakovinko}
-\address{}{Kyiv, Ukraine}
+\name{Vadym}{Zakovinko}
+\address{}{Remote}
 \mobile{+380 (66) 731-7776}
 \email{vadym@zakovinko.com}
 \homepage{zakovinko.com}
 \social[github]{Quard}
-\social[skype]{quardz}
 \social[linkedin]{vadymzakovinko}
 \photo[64pt][0pt]{photo}
 
@@ -27,19 +29,22 @@
     \maketitle
 
     \section{Skills}
+        \subsection{AI}
+            \cvline
+                {}{Claude Code, Codex, Gemini (Antigravity)}
         \subsection{Development}
             \cvline
                 {Language}{Python, Go, JavaScript}
             \cvline
-                {Database}{PostgreSQL, Redis, MongoDB, Bolt}
+                {Database}{PostgreSQL, Redis, MongoDB}
             \cvline
                 {Versions control system}{Git, Mercurial}
             \cvline
-                {Frameworks and tools}{Django, AsyncIO, AioHttp, Flask, Google Protobuf, gRPC, Django Rest Framework, Pylons, SQLAlchemy, Celery, ElasticSearch, Apache Beam, Pytest, UnitTest}
+                {Frameworks and tools}{FastAPI, Django, AsyncIO, AioHttp, Flask, AWS (Batch, ECS, SQS, EC2), Google Protobuf, gRPC, Django Rest Framework, Pylons, SQLAlchemy, Celery, ElasticSearch, Apache Beam, Pytest, UnitTest}
             \cvline
-                {Deployment/Platform}{GitHub Actions, Circle CI, Docker, Kubernetes, AWS Lambda, Google Could Platform, Terraform}
+                {Deployment/Platform}{Jenkins, GitHub Actions, Circle CI, Docker, Kubernetes, AWS Lambda, Google Could Platform, Terraform}
             \cvline
-                {Web-frontend}{HTML, CSS, SASS, Less, jQuery, AngularJS, Backbone, React}
+                {Web-frontend}{HTML, CSS, SASS, Less, React}
 
         \subsection{Computer}
             \cvline
@@ -65,8 +70,30 @@
     \section{Professional experience}
 
         \cventry
+            {2021.04~---~2026.06}
+            {Team Lead / Lead Engineer}
+            {\href{https://hailo.ai/}{Hailo AI}}
+            {}{}
+            {
+                Hailo is an Israeli semiconductor company that designs specialized AI processors and accelerators (including PCIe and USB accelerator cards) for running deep-learning workloads on edge devices,
+                with its hardware supported by the HailoRT software stack.
+                Main responsibilities:
+                \begin{itemize}
+                    \item Acted as lead engineer on a customer-facing project to build a Windows installer for the company's software, delivered both internally and to several external customers
+                    \item Drove multiple internal infrastructure and test-automation projects, including:
+                    \begin{itemize}
+                        \item Project to manage an internal lab of ~600 machines
+                        \item Integrating AWS services into the testing workflow
+                        \item Parallelizing test execution across multiple machines to reduce overall runtime
+                        \item Building test monitoring and an alerting/notification system to flag broken or failing tests
+                    \end{itemize}
+                    \item Leading a small engineering team that operated autonomously, with no dedicated management layer
+                \end{itemize}
+            }
+
+        \cventry
             {2019.12~---~2021.03}
-            {team lead/architect}
+            {Team Lead / Architect}
             {\href{http://vetintegrations.com/}{VetIntegrations}}
             {}{}
             {
@@ -84,7 +111,7 @@
 
         \cventry
             {2016.03~---~2019.10}
-            {solution architect}
+            {Solution Architect}
             {\href{http://djangostars.com}{Django Stars}}
             {}{}
             {
@@ -102,7 +129,7 @@
 
         \cventry
             {2015.03~---~2016.03}
-            {team lead/python developer}
+            {Team Lead / Python Developer}
             {\href{http://djangostars.com}{Django Stars}}
             {}{}
             {
@@ -119,7 +146,7 @@
 
         \cventry
             {2013.10~---~2015.03}
-            {python developer}
+            {Python Developer}
             {\href{http://djangostars.com}{Django Stars}}
             {}{}
             {
@@ -129,7 +156,7 @@
 
         \cventry
             {2012.12~---~2013.10}
-            {python developer}
+            {Python Developer}
             {\href{https://wargaming.com/}{Wargaming (Persha Studia)}}
             {}{}
             {
@@ -138,7 +165,7 @@
 
         \cventry
             {2011.05~--–~2012.12}
-            {python developer}
+            {Python Developer}
             {\href{https://prom.ua/}{Prom.UA}}
             {}{}
             {
@@ -153,7 +180,7 @@
 
         \cventry
             {2011.04~--–~2012.06}
-            {lead python developer}
+            {Lead Python Developer}
             {ActiveGift}
             {}{}
             {
@@ -162,7 +189,7 @@
 
         \cventry
             {2010.06~--–~2012.06}
-            {python/django developer}
+            {Python Developer}
             {Bitpapaya}
             {}{}
             {
@@ -171,7 +198,7 @@
 
         \cventry
             {2010.09~--–~2011.06}
-            {python/django developer}
+            {Python Developer}
             {42 Coffee Cups}
             {}{}
             {
@@ -180,7 +207,7 @@
 
         \cventry
             {2009.04~--–~2010.08}
-            {python/django developer}
+            {Python Developer}
             {Avtocentre}
             {}{}
             {
@@ -189,7 +216,7 @@
 
         \cventry
             {2007.11~--–~2009.03}
-            {php/adobe flex developer}
+            {PHP / Adobe Flex Developer}
             {Finport Technologiens, Inc.}
             {}{}
             {
