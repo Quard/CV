@@ -16,7 +16,7 @@ jobs:
             - name: Render PDF
               run: pdflatex cv.tex
             - name: Upload CV to Artifact
-              uses: actions/upload-artifact@v2
+              uses: actions/upload-artifact@v4
               with:
                   name: CV
                   path: ./cv.pdf
@@ -28,7 +28,7 @@ jobs:
         if: ${{ github.ref == 'refs/heads/master' }}
         steps:
             - name: Get Built CV
-              uses: actions/download-artifact@v2
+              uses: actions/download-artifact@v4
               with:
                   name: CV
                   path: ./cv.pdf
