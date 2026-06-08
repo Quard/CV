@@ -14,46 +14,30 @@ jobs:
             - name: Install LaTeX with ModernCV
               run: sudo apt-get update && sudo apt-get install -y texlive-latex-extra texlive-fonts-extra fonts-font-awesome
             - name: Render PDF
-              run: pdflatex cv.tex
+              run: pdflatex -jobname "${{ secrets.NAME }}" cv.tex
             - name: Upload CV to Artifact
-              uses: actions/upload-artifact@v4
+              uses: actions/upload-artifact@v7
               with:
                   name: CV
-                  path: ./cv.pdf
+                  path: ${{ secrets.NAME }}.pdf
 
     publish:
         name: publish
         runs-on: ubuntu-latest
         needs: build
-        if: ${{ github.ref == 'refs/heads/master' }}
+        if: ${{ github.ref_type == 'tag' }}
         steps:
             - name: Get Built CV
-              uses: actions/download-artifact@v4
+              uses: actions/download-artifact@v8
               with:
                   name: CV
-                  path: ./cv.pdf
-            - name: Get date
-              id: date
-              run: echo "::set-output name=date::$(date +'%Y%m%d%H%M')"
-            - name: Rename Release File
-              run: cp ./cv.pdf ./${{ secrets.NAME }}.pdf
+                  path: ./${{ secrets.NAME }}.pdf
             - name: Create Release
               id: create_release
-              uses: softprops/action-gh-release@v1
+              uses: softprops/action-gh-release@v3
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               with:
-                  tag_name: ${{ steps.date.outputs.date }}
-                  name: ${{ steps.date.outputs.date }}
                   draft: false
                   prerelease: false
                   files: ${{ secrets.NAME }}.pdf
-            - name: Upload CV as Release Asset
-              uses: actions/upload-release-asset@v1
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-              with:
-                  upload_url: ${{ steps.create_release.outputs.upload_url }}
-                  asset_path: ./cv.pdf
-                  asset_name: ${{ secrets.NAME }}.pdf
-                  asset_content_type: application/pdf
